@@ -1,0 +1,39 @@
+<div class="progress">
+    <div class="stage-container" [ngClass]="{current: stagesTouched[0]}">
+        <div class="stage">
+            <div class="overlay" [style.width.%]="stagesCompletion[0]"></div>
+        </div>
+        <div class="name">
+            <span class="extended">Discover </span>Experiences</div>
+    </div>
+    <div class="stage-container" [ngClass]="{current: stagesTouched[1]}">
+        <div class="stage">
+            <div class="overlay" [style.width.%]="stagesCompletion[1]"></div>
+        </div>
+        <div class="name">
+            <span class="extended">Basic </span>Info</div>
+
+    </div>
+    <div class="stage-container" [ngClass]="{current: stagesTouched[2]}">
+        <div class="stage">
+            <div class="overlay" [style.width.%]="stagesCompletion[2]"></div>
+        </div>
+        <div class="name">
+            <span class="extended">Get </span>Proposal</div>
+    </div>
+</div>
+<div class="buttons">
+    <a *ngIf="showBack" routerLink="{{backUrl}}" class="back ui button big left floated basic animated">
+        <div class="visible content">Back</div>
+        <div class="hidden content">
+            <i class="left arrow icon"></i>
+        </div>
+    </a>
+    <button (click)="nextClick.emit()" routerLink="{{nextUrl || '.'}}" class="main big right floated animated ui button" [ngClass]="{disabled: disableNext, loading: loadingNext}">
+        <div class="visible content long">{{nextLongTitle}}</div>
+        <div class="visible content short">{{nextShortTitle || nextLongTitle}}</div>
+        <div class="hidden content">
+            <i class="right arrow icon"></i>
+        </div>
+    </button>
+</div>

@@ -1,0 +1,88 @@
+@import '../../colors.scss';
+:host {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 2rem 1rem 2rem;
+    background: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    .progress {
+        margin-top: 0.5rem;
+        max-width: 700px;
+        width: 100%;
+        flex: 1;
+        margin-top: 0;
+        margin-right: 2rem;
+        display: none;
+        @media only screen and (min-width: 850px) {
+            display: flex;
+        }
+        .stage-container {
+            color: rgba(34, 36, 38, .35);
+            flex: 1;
+            &.current {
+                color: $secondary-color;
+            }
+            .name {
+                margin-top: 0.2rem;
+                .extended {
+                    display: none;
+                    @media only screen and (min-width: 450px) {
+                        display: inline;
+                    }
+                }
+            }
+            .stage {
+                background: rgba(34, 36, 38, .15);
+                height: 10px;
+                position: relative;
+                overflow: hidden;
+                .overlay {
+                    position: absolute;
+                    height: 100%;
+                    background: $secondary-color;
+                }
+            }
+            &:first-of-type .stage {
+                border-radius: 15px 0 0 15px;
+                border-right: 2px solid white;
+            }
+            &:last-of-type .stage {
+                border-left: 2px solid white;
+                border-radius: 0 15px 15px 0;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        width: 100%;
+        @media only screen and (min-width: 850px) {
+            width: auto;
+        }
+        justify-content: center;
+        .back {
+            flex-shrink: 0;
+        }
+        .main .content {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            &.long {
+                display: none;
+            }
+            @media only screen and (min-width: 350px) {
+                &.long {
+                    display: inline;
+                }
+                &.short {
+                    display: none;
+                }
+            }
+        }
+    }
+}

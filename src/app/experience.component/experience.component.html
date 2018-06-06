@@ -1,0 +1,23 @@
+<header>
+    <a class="logo" routerLink="/">
+        <img src="assets/w-white.svg">
+    </a>
+</header>
+<div class="image-wrapper">
+    <div class="overlay"></div>
+</div>
+
+<div class="title">
+    <span class="main-category-title">{{experience.title}}</span>
+</div>
+
+<div class="sub-title">{{description}}</div>
+
+<div class="ui tag labels">
+    <span *ngFor="let label of labels" class="ui tag label">{{label}}</span>
+</div>
+
+<footer></footer>
+
+<plan-footer [stagesCompletion]="[0, 0, 0]" [showBack]="false" [stagesTouched]="[true, false, false]" backUrl="../" nextUrl="similar" nextLongTitle="Start Planning" nextShortTitle="Start Planning">
+</plan-footer>

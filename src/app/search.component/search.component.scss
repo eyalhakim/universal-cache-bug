@@ -1,0 +1,18 @@
+:host {
+    z-index: 1000;
+    sui-search::ng-deep {
+        position: absolute;
+        top: 17.5px;
+        right: 2rem;
+        .input {
+            width: 140px;
+            @media only screen and (min-width: 450px) {
+                width: 252px;
+            }
+        }
+        .results {
+            left: auto;
+            right: 0;
+        }
+    }
+}

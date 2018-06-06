@@ -1,0 +1,37 @@
+@import '../../colors.scss';
+:host {
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-left: 2rem;
+    }
+    /deep/ .image-wrapper {
+        margin-bottom: 0.6rem;
+        width: 100vw;
+        .overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, .55) 0, rgba(0, 0, 0, .55) 7%, transparent 82%, transparent);
+            position: absolute;
+            width: 100%;
+            height: 200px;
+        }
+        img {
+            object-fit: cover;
+            object-position: center;
+            height: 220px;
+            width: 100%;
+            @media only screen and (min-height: 700px) {
+                height: 340px;
+            }
+        }
+    }
+    .title .main-category-title {
+        color: inherit;
+    }
+    .sub-title {
+        max-width: 700px;
+    }
+    .ui.tag.labels {
+        margin-top: 2rem;
+    }
+}
